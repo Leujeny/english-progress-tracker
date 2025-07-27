@@ -1,11 +1,11 @@
 import Link from "next/link";
-import TypeAvatar from "../avatar/typeAvatar";
+import TypeAvatar from "../atoms/avatar/typeAvatar";
 
 interface Props {
     datas: Ressource[],
 }
 
-export default function AddRessourceForm({ datas }: Props) {
+export default function FavoriteRessourceCard({ datas }: Props) {
     return (
         <div className="mt-8">
             <h2 className="card-title p-3">My favorite podcasts</h2>

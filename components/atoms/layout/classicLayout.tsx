@@ -1,9 +1,8 @@
-import { Dispatch, SetStateAction } from "react";
-import Header from "../header";
-import Footer from "../footer";
+import Header from "../../organisms/header";
+import Footer from "../../organisms/footer";
 
 interface Props {
-    children: any
+    children: React.ReactNode;
 }
 
 export default function ClassicLayout({ children }: Props) {

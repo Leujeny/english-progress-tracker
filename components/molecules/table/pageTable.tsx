@@ -1,7 +1,7 @@
 'use client'
 
 interface Props {
-    children: any,
+    children: React.ReactNode,
     tableSize: number,
     tableHeader: string[],
 }

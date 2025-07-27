@@ -1,11 +1,11 @@
 'use client'
-import { Dispatch, SetStateAction, useRef, useState } from "react";
-import InputSelect from "../input/inputSelect";
-import InputText from "../input/inputText";
-import InputDate from "../input/inputDate";
-import ButtonDialog from "../buttonDialog";
-import InputRange from "../input/inputRange";
-import InputTextarea from "../input/inputTextarea";
+import InputDate from "@/components/atoms/input/inputDate";
+import InputRange from "@/components/atoms/input/inputRange";
+import InputSelect from "@/components/atoms/input/inputSelect";
+import InputText from "@/components/atoms/input/inputText";
+import InputTextarea from "@/components/atoms/input/inputTextarea";
+import { Dispatch, SetStateAction, useState } from "react";import ButtonDialog from "../buttonDialog/buttonDialog";
+;
 
 interface Props {
   sessions: Session[],
@@ -38,7 +38,7 @@ export default function AddSessionButtonModal({ sessions, setSessions }: Props) 
 
 
   return (
-    <ButtonDialog title={"Add a session"} addSession={addSession}>
+    <ButtonDialog title={"Add a session"} btnAction={addSession} btnTitle={"New session"}>
       <InputSelect options={typeOption} value={type} setValue={setType} label={"Type"} />
       <InputSelect options={ressourceNameOption} value={name} setValue={setName} label={"Name"} />
       <InputText label={"Episode"} value={episode} setValue={setEpisode} />

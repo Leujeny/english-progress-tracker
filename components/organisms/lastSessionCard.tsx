@@ -1,5 +1,5 @@
 import Link from "next/link";
-import TypeAvatar from "../avatar/typeAvatar";
+import TypeAvatar from "../atoms/avatar/typeAvatar";
 
 interface Props {
     datas: Session[],
@@ -24,7 +24,6 @@ export default function LastSessionCard({ datas }: Props) {
                                     <div className="divider mx-auto w-4/5" />
                                     <div className="flex flex-wrap">
                                         <div className="badge badge-soft badge-primary">{data.date}</div>
-                                        <div className="ml-2 badge badge-soft badge-primary">{data.type}</div>
                                         <div className="ml-2 badge badge-soft badge-success">[easy]</div>
                                         <div className="ml-2 badge badge-soft badge-warning">[5/10]</div>
                                     </div>

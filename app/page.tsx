@@ -1,17 +1,9 @@
 'use client'
 
 import { useLocalStorage } from "@/hook/useLocalStorage";
-import LastSessionCard from "@/components/card/lastSessionCard";
-import AddSessionButtonModal from "@/components/buttonModal/addSessionButtonModal";
-import FavoriteRessourceCard from "@/components/card/favoriteRessourceCard";
-
-const myRessources: Ressource[] = [
-  { id: 5, name: 'The last podcast', type: 'podcast' },
-  { id: 4, name: 'another podcast', type: 'podcast' },
-  { id: 3, name: 'JMA', type: 'podcast' },
-  { id: 2, name: 'BCC News', type: 'text' },
-  { id: 1, name: 'BBC learning english', type: 'video' },
-]
+import LastSessionCard from "@/components/organisms/lastSessionCard";
+import FavoriteRessourceCard from "@/components/organisms/favoriteRessourceCard";
+import AddSessionButtonModal from "@/components/molecules/buttonModal/addSessionButtonModal";
 
 const myGrades = [
   { id: 5, date: '23/07/2025', grade: '424' },
@@ -23,8 +15,9 @@ const myGrades = [
 
 export default function Home() {
 
-  // const [levels, setLevels] = useLocalStorage<Level[]>("english_levels", []);
   const [sessions, setSessions] = useLocalStorage<Session[]>("sessions", []);
+  const [ressources, setRessources] = useLocalStorage<Ressource[]>("ressources", []);
+
 
   return (
     <>
@@ -52,9 +45,9 @@ export default function Home() {
         </div>
       </div>
       <LastSessionCard datas={sessions} />
-      <FavoriteRessourceCard datas={myRessources} />
+      <FavoriteRessourceCard datas={ressources} />
       <div className="grid grid-cols-4 gap-4">
-        
+
         {/* <MyRessourceCard datas={myRessources} /> */}
         {/* <MyLevelCard datas={myGrades} /> */}
       </div>

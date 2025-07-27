@@ -25,8 +25,8 @@ export default function TypeAvatar({ type }: Props) {
 
   return (
     <div className="avatar">
-      <div className="bg-primary rounded-full p-2 flex items-center justify-center content-end">
-        {icon && <FontAwesomeIcon icon={icon} className="text-white text-xl m-1 w-4" />}
+      <div className="bg-primary rounded-full p-2 flex items-center justify-center content-end m-auto">
+        {icon && <FontAwesomeIcon icon={icon} className="text-white text-xl " />}
       </div>
     </div>
   );

@@ -3,8 +3,8 @@
 import { useLocalStorage } from "@/hook/useLocalStorage";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faPen, faEye } from '@fortawesome/free-solid-svg-icons'
-import ButtonDialog from "@/components/buttonDialog";
-import PageTable from "@/components/table/pageTable";
+import ButtonDialog from "@/components/molecules/buttonDialog/buttonDialog";
+import PageTable from "@/components/molecules/table/pageTable";
 
 const tableHeader = ['Date', 'Name', 'Type']
 
@@ -15,7 +15,7 @@ export default function Session() {
     <div className="card bg-base-100 shadow-sm">
       <div className="card-body">
         <h2 className="card-title">My sessions</h2>
-        <ButtonDialog children={undefined} title={"Add a ressource"} addSession={() => undefined} />
+        <ButtonDialog children={undefined} title={"Add a session"} btnAction={() => undefined} btnTitle={"New session"} lableAction={"Add"} />
         <PageTable tableSize={sessions.length} tableHeader={tableHeader}>
           {sessions && sessions.map((data: Session, index) => (
             <tr key={index}>
