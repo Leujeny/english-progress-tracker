@@ -1,19 +1,11 @@
-import "./globals.css";
-import Footer from "@/components/footer";
-import Header from "@/components/header";
-import ViewedRessourceCard from "@/components/card/viewedRessourceCard";
-import MyRessourceCard from "@/components/card/myRessourceCard";
-import MyLevelCard from "@/components/card/myLevelCard";
+'use client'
 
-const myViewedRessources = [
-  { id: 5, date: '23/07/2025', name: 'Mon Texte', type: 'text' },
-  { id: 4, date: '23/07/2025', name: 'Mon podcast', type: 'podcast' },
-  { id: 3, date: '22/07/2025', name: 'Ma video', type: 'video' },
-  { id: 2, date: '21/07/2025', name: 'BBC text', type: 'text' },
-  { id: 1, date: '20/07/2025', name: 'Wiki text', type: 'text' },
-]
+import { useLocalStorage } from "@/hook/useLocalStorage";
+import LastSessionCard from "@/components/card/lastSessionCard";
+import AddSessionButtonModal from "@/components/buttonModal/addSessionButtonModal";
+import FavoriteRessourceCard from "@/components/card/favoriteRessourceCard";
 
-const myRessources = [
+const myRessources: Ressource[] = [
   { id: 5, name: 'The last podcast', type: 'podcast' },
   { id: 4, name: 'another podcast', type: 'podcast' },
   { id: 3, name: 'JMA', type: 'podcast' },
@@ -30,17 +22,42 @@ const myGrades = [
 ]
 
 export default function Home() {
+
+  // const [levels, setLevels] = useLocalStorage<Level[]>("english_levels", []);
+  const [sessions, setSessions] = useLocalStorage<Session[]>("sessions", []);
+
   return (
     <>
-      <Header />
-      <main className="min-h-screen mx-auto py-4 container">
-        <div className="grid grid-cols-4 gap-4">
-          <ViewedRessourceCard datas={myViewedRessources} />
-          <MyRessourceCard datas={myRessources} />
-          <MyLevelCard datas={myGrades} />
+      <div className="grid grid-cols-4 gap-4 mb-4">
+        <div className="card bg-base-100 col-span-4 lg:col-span-2">
+          <div className="card-body">
+            <p>Les données sont stockées dans votre navigateur <em>(local storage)</em></p>
+            <p>Aucune données n'est donc stockée sur le serveur</p>
+            <AddSessionButtonModal sessions={sessions} setSessions={setSessions} />
+          </div>
         </div>
-      </main>
-      <Footer />
+        <div className="stats shadow bg-base-100 col-span-2 lg:col-span-1">
+          <div className="stat place-items-center">
+            <div className="stat-title">Viewed ressources</div>
+            <div className="stat-value">150</div>
+            <div className="stat-desc">+ 12</div>
+          </div>
+        </div>
+        <div className="stats shadow bg-base-100 col-span-2 lg:col-span-1">
+          <div className="stat place-items-center">
+            <div className="stat-title">Level</div>
+            <div className="stat-value">B2</div>
+            <div className="stat-desc">↗︎ 424 (22%)</div>
+          </div>
+        </div>
+      </div>
+      <LastSessionCard datas={sessions} />
+      <FavoriteRessourceCard datas={myRessources} />
+      <div className="grid grid-cols-4 gap-4">
+        
+        {/* <MyRessourceCard datas={myRessources} /> */}
+        {/* <MyLevelCard datas={myGrades} /> */}
+      </div>
     </>
   );
 }
