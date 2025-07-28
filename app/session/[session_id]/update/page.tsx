@@ -5,7 +5,7 @@ import InputRange from "@/components/atoms/input/inputRange";
 import InputSelect from "@/components/atoms/input/inputSelect";
 import InputText from "@/components/atoms/input/inputText";
 import InputTextarea from "@/components/atoms/input/inputTextarea";
-import AddRessourceForm from "@/components/organisms/form/addRessourceForm";
+import AddRessourceForm from "@/components/organisms/form/addSessionForm";
 import { DIFFICULTY_OPTION } from "@/constants/selectionOption";
 import { useLocalStorage } from "@/hook/useLocalStorage";
 import { transformerRessourcesEnOptions } from "@/utils/resourceUtils";

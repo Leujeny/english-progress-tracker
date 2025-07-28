@@ -3,12 +3,13 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import IconButtonDialog from "../molecules/buttonDialog/IconbuttonDialog";
 import { faEye, faPen, faTrash } from "@fortawesome/free-solid-svg-icons";
-import TitleBloc from "../organisms/titleBloc";
-import StatsList from "../organisms/statsList";
 import PageTable from "../molecules/table/pageTable";
 import { SESSION_TABLE_HEADER } from "@/constants/tableHeader";
 import { ParamValue } from "next/dist/server/request/params";
 import { useEffect, useState } from "react";
+import TitleBlocRessource from "../organisms/titleBlocRessource";
+import StatsListSession from "../organisms/statsListSession";
+import StatsList from "../organisms/statsList";
 
 interface Props {
     ressources: Ressource[],
@@ -47,7 +48,7 @@ export default function ViewTemplate({ ressources, setRessources, sessions, ress
 
     return (
         <>
-            <TitleBloc ressource={ressource} setRessources={setRessources} />
+            <TitleBlocRessource ressource={ressource} setRessources={setRessources} />
             <StatsList />
             {(linkedSessions && linkedSessions.length > 0) && (
                 <div className="card bg-base-100 shadow-sm mt-8">
@@ -64,11 +65,15 @@ export default function ViewTemplate({ ressources, setRessources, sessions, ress
                                         <IconButtonDialog title={"Delete a ressource"} iconTitle={faTrash} btnAction={() => deleteUserById(data.id)} color={"error"} lableAction={"Delete"}>
                                             <p>Are you sure you want to delete this resource?</p>
                                         </IconButtonDialog>
-                                        <button className="btn btn-circle btn-ghost hidden lg:block">
-                                            <FontAwesomeIcon icon={faPen} className="text-warning" />
-                                        </button>
-                                        <a href={`/ressource/${data.id}`} className="btn btn-circle btn-ghost">
-                                            <FontAwesomeIcon icon={faEye} className="text-primary" />
+                                        <a href={`/session/${data.id}/update`}>
+                                            <button className="btn btn-circle btn-ghost hidden lg:block">
+                                                <FontAwesomeIcon icon={faPen} className="text-warning" />
+                                            </button>
+                                        </a>
+                                        <a href={`/session/${data.id}`}>
+                                            <button className="btn btn-circle btn-ghost">
+                                                <FontAwesomeIcon icon={faEye} className="text-primary" />
+                                            </button>
                                         </a>
                                     </td>
                                 </tr>

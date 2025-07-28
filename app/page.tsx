@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <>
       <div className="grid grid-cols-4 gap-4 mb-4">
-        <div className="card bg-base-100 col-span-4 lg:col-span-2">
+        <div className="card bg-base-100 shadow col-span-4 lg:col-span-2">
           <div className="card-body">
             <p>Les données sont stockées dans votre navigateur <em>(local storage)</em></p>
             <p>Aucune données n'est donc stockée sur le serveur</p>
@@ -45,9 +45,6 @@ export default function Home() {
       <LastSessionCard datas={sessions} />
       <FavoriteRessourceCard datas={ressources} />
       <div className="grid grid-cols-4 gap-4">
-
-        {/* <MyRessourceCard datas={myRessources} /> */}
-        {/* <MyLevelCard datas={myGrades} /> */}
       </div>
     </>
   );

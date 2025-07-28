@@ -1,6 +1,6 @@
 'use client'
 import { Dispatch, SetStateAction, useState } from "react"; import ButtonDialog from "../buttonDialog/buttonDialog";
-import AddRessourceForm from "@/components/organisms/form/addRessourceForm";
+import AddSessionForm from "@/components/organisms/form/addSessionForm";
 import { useRouter } from "next/navigation";
 import { transformerRessourcesEnOptions } from "@/utils/resourceUtils";
 interface Props {
@@ -31,16 +31,22 @@ export default function AddSessionButtonModal({ sessions, setSessions, ressource
       episode: episode,
       duration: duration,
       note: note
-
     };
-    setSessions([...sessions, newLevel]);
-    router.push(`/session/${id}/update`);
+
+    setSessions([...sessions, newLevel]),
+      setEpisode(''),
+      setDate(''),
+      setDuration(15),
+      setUnderstanding(''),
+      setNote(''),
+      setPodcast(''),
+      router.push(`/session/${id}/update`)
   };
 
 
   return (
     <ButtonDialog title={"Add a session"} btnAction={addSession} btnTitle={"New session"} lableAction={"Add"}>
-      <AddRessourceForm
+      <AddSessionForm
         date={date} setDate={setDate}
         episode={episode} setEpisode={setEpisode}
         duration={duration} setDuration={setDuration}
