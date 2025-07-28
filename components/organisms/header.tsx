@@ -10,7 +10,7 @@ export default function Header() {
                         <li><a className="text-base p-4" href='/'>Homepage</a></li>
                         <li><a className="text-base p-4" href='/session'>My sessions</a></li>
                         <li><a className="text-base p-4" href='/ressource'>My ressources</a></li>
-                        <li><a className="text-base p-4">About</a></li>
+                        <li><a className="text-base p-4" href='/about'>About</a></li>
                     </ul>
                 </div>
             </div>
