@@ -14,10 +14,8 @@ const myGrades = [
 ]
 
 export default function Home() {
-
   const [sessions, setSessions] = useLocalStorage<Session[]>("sessions", []);
   const [ressources, setRessources] = useLocalStorage<Ressource[]>("ressources", []);
-
 
   return (
     <>
@@ -26,7 +24,7 @@ export default function Home() {
           <div className="card-body">
             <p>Les données sont stockées dans votre navigateur <em>(local storage)</em></p>
             <p>Aucune données n'est donc stockée sur le serveur</p>
-            <AddSessionButtonModal sessions={sessions} setSessions={setSessions} />
+            <AddSessionButtonModal sessions={sessions} setSessions={setSessions} ressources={ressources} />
           </div>
         </div>
         <div className="stats shadow bg-base-100 col-span-2 lg:col-span-1">

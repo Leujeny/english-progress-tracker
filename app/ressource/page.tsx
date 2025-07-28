@@ -8,8 +8,7 @@ import PageTable from "@/components/molecules/table/pageTable";
 import { useState } from "react";
 import AddRessourceForm from "@/components/organisms/form/addRessourceForm";
 import IconButtonDialog from "@/components/molecules/buttonDialog/IconbuttonDialog";
-
-const tableHeader = ['Name', 'Type']
+import { RESSOURCE_TABLE_HEADER } from "@/constants/tableHeader";
 
 export default function Ressource() {
   const [ressources, setRessources] = useLocalStorage<Ressource[]>("ressources", []);
@@ -21,6 +20,7 @@ export default function Ressource() {
       id: Date.now(),
       name: name,
       type: 'podcast',
+      note: note
     };
     setRessources([...ressources, newRessource]);
     setName('')
@@ -50,7 +50,7 @@ export default function Ressource() {
         <ButtonDialog title={"Add a ressource"} btnAction={addRessource} btnTitle={"New ressource"} lableAction={"Add"}>
           <AddRessourceForm name={name} setName={setName} note={note} setNote={setNote} />
         </ButtonDialog>
-        <PageTable tableSize={ressources.length} tableHeader={tableHeader}>
+        <PageTable tableSize={ressources.length} tableHeader={RESSOURCE_TABLE_HEADER}>
           {ressources && ressources.map((data: Ressource, index) => (
             <tr key={index}>
               <th className="hidden lg:block">{index + 1}</th>
