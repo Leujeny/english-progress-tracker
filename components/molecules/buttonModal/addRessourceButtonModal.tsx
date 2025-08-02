@@ -27,7 +27,7 @@ export default function AddRessourceButtonModal({ ressources, setRessources }: P
 
 
   return (
-    <ButtonDialog title={"Add a ressource"} btnAction={addRessource} btnTitle={"New ressource"} lableAction={"Add"}>
+    <ButtonDialog title={"Add a ressource"} btnAction={addRessource} btnTitle={"Nouvelle ressource"} lableAction={"Add"}>
       <AddRessourceForm note={note} setNote={setNote} name={name} setName={setName} />
     </ButtonDialog>
   );

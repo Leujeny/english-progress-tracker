@@ -17,11 +17,11 @@ export default function Dialog({ children, modalRef, title, btnAction, lableActi
                 {children}
                 <form method="dialog">
                     <button onClick={btnAction} className="btn btn-primary rounded-sm me-4  mt-4">{lableAction}</button>
-                    <button className="btn btn-primary btn-outline rounded-sm  mt-4">Close</button>
+                    <button className="btn btn-primary btn-outline rounded-sm  mt-4">Fermer</button>
                 </form>
             </div>
             <form method="dialog" className="modal-backdrop">
-                <button>close</button>
+                <button>Fermer</button>
             </form>
         </dialog>
     );

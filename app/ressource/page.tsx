@@ -43,14 +43,14 @@ export default function Ressource() {
 
   return (
     <ListTemplate
-      pageTitle={"My ressources"} typeBloc={"ressource"}
+      pageTitle={"Mes ressources"} typeBloc={"ressource"}
       setRessources={setRessources} ressources={ressources}
     >
       {ressources && ressources.map((data: Ressource, index) => (
         <TableRow
           key={index} item={data} index={index}
           deleteAction={() => deleteUserById(data.id)}
-          deleteConfirmationMessage="Are you sure you want to delete this resource?"
+          deleteConfirmationMessage="Êtes-vous sur de vouloir supprimer cette resource?"
           viewPathPrefix="/ressource"
           renderCells={(resource: Ressource) => (
             <>

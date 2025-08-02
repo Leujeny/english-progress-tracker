@@ -1,1 +1,1 @@
-export const DIFFICULTY_OPTION: Option[] = [{ value: 'easy', label: 'Easy' }, { value: 'medium', label: 'Medium' }, { value: 'hard', label: 'Hard' }]
+export const DIFFICULTY_OPTION: Option[] = [{ value: 'easy', label: 'Facile' }, { value: 'medium', label: 'Moyen' }, { value: 'hard', label: 'Difficile' }]

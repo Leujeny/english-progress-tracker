@@ -15,7 +15,7 @@ export default function DeleteButtonModal({ sessions, setSessions }: Props) {
   // };
 
   return (
-    <ButtonDialog title={"Add a session"} btnAction={() => undefined} btnTitle={"New session"} children={undefined} lableAction={"Delete"}>
+    <ButtonDialog title={"Ajouter une session"} btnAction={() => undefined} btnTitle={"Nouvelle session"} children={undefined} lableAction={"Delete"}>
 
     </ButtonDialog>
   );

@@ -45,7 +45,7 @@ export default function AddSessionButtonModal({ sessions, setSessions, ressource
 
 
   return (
-    <ButtonDialog title={"Add a session"} btnAction={addSession} btnTitle={"New session"} lableAction={"Add"}>
+    <ButtonDialog title={"Ajouter une session"} btnAction={addSession} btnTitle={"Nouvelle session"} lableAction={"Add"}>
       <AddSessionForm
         date={date} setDate={setDate}
         episode={episode} setEpisode={setEpisode}

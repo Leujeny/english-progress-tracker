@@ -12,7 +12,7 @@ export default function InputSelect({ value, setValue, options, label }: Props) 
         <fieldset className="fieldset">
             <legend className="fieldset-legend">{label}</legend>
             <select value={value} onChange={e => setValue(e.target.value)} className="select">
-                <option value='' disabled={true}>Pick a type</option>
+                <option value='' disabled={true}></option>
                 {options?.map((option, index) => (
                     <option key={index} value={option.value}>{option.label}</option>
                 ))}

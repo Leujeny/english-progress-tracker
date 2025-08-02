@@ -29,14 +29,14 @@ export default function Home() {
         </div>
         <div className="stats shadow bg-base-100 col-span-2 lg:col-span-1">
           <div className="stat place-items-center">
-            <div className="stat-title">Viewed ressources</div>
+            <div className="stat-title">Ressource vues</div>
             <div className="stat-value">150</div>
             <div className="stat-desc">+ 12</div>
           </div>
         </div>
         <div className="stats shadow bg-base-100 col-span-2 lg:col-span-1">
           <div className="stat place-items-center">
-            <div className="stat-title">Level</div>
+            <div className="stat-title">Niveau</div>
             <div className="stat-value">B2</div>
             <div className="stat-desc">↗︎ 424 (22%)</div>
           </div>

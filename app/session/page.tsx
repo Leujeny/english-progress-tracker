@@ -14,7 +14,7 @@ export default function Session() {
 
   return (
     <ListTemplate
-      pageTitle={"My sessions"} typeBloc={"session"}
+      pageTitle={"Mes sessions"} typeBloc={"session"}
       ressources={ressources}
       sessions={sessions} setSessions={setSessions}
     >
@@ -24,7 +24,7 @@ export default function Session() {
           item={data}
           index={index}
           deleteAction={() => deleteUserById(data.id)}
-          deleteConfirmationMessage="Are you sure you want to delete this session?"
+          deleteConfirmationMessage="Êtes vous sur de vouloir supprimer cette session ?"
           viewPathPrefix="/session"
           renderCells={(session: Session) => (
             <>

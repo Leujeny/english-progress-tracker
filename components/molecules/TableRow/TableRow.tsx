@@ -25,7 +25,7 @@ const TableRow: React.FC<TableRowProps> = ({
       <th className="hidden lg:block">{index + 1}</th>
       {renderCells(item)}
       <td className="flex justify-end">
-        <IconButtonDialog title={"Delete an item"} iconTitle={faTrash} btnAction={() => deleteAction(item.id)} color={"error"} lableAction={"Delete"}>
+        <IconButtonDialog title={"Supprimer une session"} iconTitle={faTrash} btnAction={() => deleteAction(item.id)} color={"error"} lableAction={"Delete"}>
           <p>{deleteConfirmationMessage}</p>
         </IconButtonDialog>
         <a href={`${viewPathPrefix}/${item.id}/update`}>
